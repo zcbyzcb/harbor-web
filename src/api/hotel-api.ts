@@ -39,6 +39,7 @@ export interface OrderSummary {
 export interface Guest {
   name: string;
   phone: string;
+  identityNo: string;
 }
 export interface RegisteredRoom {
   roomId: string;

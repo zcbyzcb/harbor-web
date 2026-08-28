@@ -68,9 +68,10 @@ async function submit() {
   if (!pending.value) {
     if (
       !form.bookerName.trim() ||
-      !/^[+0-9][0-9 -]{5,31}$/.test(form.bookerPhone.trim())
+      form.bookerPhone.trim().length !== 11 ||
+      !/^1[3-9]\d{9}$/.test(form.bookerPhone.trim())
     ) {
-      failure.value = "请输入联系人姓名和有效联系电话";
+      failure.value = "请输入联系人姓名和有效的 11 位手机号";
       return;
     }
     pending.value = {
@@ -245,8 +246,8 @@ onBeforeRouteLeave(() => {
       /><el-form label-position="top" :disabled="!!pending || busy">
         <el-form-item label="联系人姓名（必填）">
           <el-input v-model="form.bookerName" maxlength="64" />
-        </el-form-item><el-form-item label="联系电话（必填）">
-          <el-input v-model="form.bookerPhone" maxlength="32" />
+        </el-form-item><el-form-item label="手机号（必填）">
+          <el-input v-model="form.bookerPhone" maxlength="11" />
         </el-form-item><el-form-item label="备注">
           <el-input
             v-model="form.remark"

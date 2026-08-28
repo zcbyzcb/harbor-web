@@ -25,7 +25,7 @@ const candidates = ref<Candidate[]>([]);
 const candidateLoading = ref(false);
 const roomIds = ref<string[]>([]);
 const guests = reactive<
-  Record<string, { key: string; name: string; phone: string }[]>
+  Record<string, { key: string; name: string; phone: string; identityNo: string }[]>
 >({});
 const reason = ref("");
 const pending = ref<
@@ -38,7 +38,7 @@ function newGuestKey() {
 }
 function roomGuests(roomId: string) {
   return (guests[roomId] ??= [
-    { key: crypto.randomUUID(), name: "", phone: "" },
+    { key: crypto.randomUUID(), name: "", phone: "", identityNo: "" },
   ]);
 }
 async function openCheckin() {
@@ -74,10 +74,15 @@ function prepareCheckin() {
     guests: roomGuests(roomId).map((g) => ({
       name: g.name.trim(),
       phone: g.phone.trim(),
+      identityNo: g.identityNo.trim(),
     })),
   }));
-  if (rooms.some((r) => r.guests.some((g) => !g.name))) {
-    failure.value = "请填写每间房的实际入住人姓名";
+  if (
+    rooms.some((r) =>
+      r.guests.some((g) => !g.name || g.identityNo.length !== 18),
+    )
+  ) {
+    failure.value = "请填写入住人姓名和 18 位身份证号";
     return;
   }
   pending.value = {
@@ -273,6 +278,12 @@ onBeforeRouteLeave(() => {
             aria-label="入住人电话"
             placeholder="电话（选填）"
             maxlength="32"
+          /><el-input
+            v-model="guest.identityNo"
+            :disabled="!!pending"
+            aria-label="入住人身份证号"
+            placeholder="身份证号（必填，18 位）"
+            maxlength="18"
           /><el-button
             v-if="roomGuests(roomId).length > 1"
             :disabled="!!pending"
@@ -293,6 +304,7 @@ onBeforeRouteLeave(() => {
               key: newGuestKey(),
               name: '',
               phone: '',
+              identityNo: '',
             })
           "
         >
