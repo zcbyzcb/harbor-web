@@ -137,9 +137,16 @@ onMounted(load);
         <template #default="{ row }">
           ¥{{ row.totalAmount }}
         </template>
-      </el-table-column><el-table-column label="操作" width="80" fixed="right">
+      </el-table-column><el-table-column label="操作" width="170" fixed="right">
         <template #default="{ row }">
-          <RouterLink :to="`/orders/${row.id}`">详情</RouterLink>
+          <div class="table-actions">
+            <RouterLink :to="`/orders/${row.id}`">
+              <el-button size="small">查看</el-button>
+            </RouterLink>
+            <RouterLink v-if="row.status === 'PENDING'" :to="`/orders/${row.id}`">
+              <el-button size="small" type="primary">办理入住</el-button>
+            </RouterLink>
+          </div>
         </template>
       </el-table-column>
     </el-table><el-pagination

@@ -65,11 +65,16 @@ onBeforeUnmount(() => window.removeEventListener("hotel:changed", load));
           <template #default="{ row }">
             {{ dateTime(row.plannedCheckinTime) }}
           </template>
-        </el-table-column><el-table-column label="操作" width="110">
+        </el-table-column><el-table-column label="操作" width="170">
           <template #default="{ row }">
-            <RouterLink :to="`/orders/${row.orderId}`">
-              查看 / 入住
-            </RouterLink>
+            <div class="table-actions">
+              <RouterLink :to="`/orders/${row.orderId}`">
+                <el-button size="small">查看</el-button>
+              </RouterLink>
+              <RouterLink :to="`/orders/${row.orderId}`">
+                <el-button size="small" type="primary">办理入住</el-button>
+              </RouterLink>
+            </div>
           </template>
         </el-table-column>
       </el-table>

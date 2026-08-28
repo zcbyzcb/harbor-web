@@ -280,6 +280,15 @@ nav a:hover {
   justify-content: flex-end;
   margin-top: 22px;
 }
+.table-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  white-space: nowrap;
+}
+.table-actions a {
+  display: inline-flex;
+}
 .el-pagination {
   margin-top: 24px;
   justify-content: flex-end;
