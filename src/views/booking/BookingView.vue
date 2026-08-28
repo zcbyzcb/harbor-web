@@ -13,6 +13,9 @@ import {
 import { messageOf, resultUnknown } from "@/api/http";
 import { useQuery } from "@/composables/use-query";
 import { useAuthStore } from "@/stores/auth-store";
+import standardTwinImage from "@/assets/room-standard-twin.svg";
+import deluxeQueenImage from "@/assets/room-deluxe-queen.svg";
+import familyImage from "@/assets/room-family.svg";
 const router = useRouter();
 const auth = useAuthStore();
 const context = ref<HotelContext>();
@@ -34,6 +37,14 @@ const form = reactive({ bookerName: "", bookerPhone: "", remark: "" });
 const busy = ref(false);
 const failure = ref("");
 const pending = ref<{ key: string; body: BookingInput }>();
+const roomImages: Record<string, string> = {
+  STANDARD_TWIN: standardTwinImage,
+  DELUXE_QUEEN: deluxeQueenImage,
+  FAMILY: familyImage,
+};
+function roomImage(type: RoomType) {
+  return roomImages[type.typeCode] ?? standardTwinImage;
+}
 async function initialize() {
   bootError.value = "";
   try {
@@ -171,7 +182,9 @@ onBeforeRouteLeave(() => {
       :key="type.roomTypeId"
       class="room-card"
     >
-      <div class="room-cover">{{ type.typeName }}</div>
+      <div class="room-cover">
+        <img :src="roomImage(type)" :alt="`${type.typeName}默认图片`" />
+      </div>
       <div class="room-body">
         <h2>{{ type.typeName }}</h2>
         <p class="muted">

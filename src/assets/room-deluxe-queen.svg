@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+  <title id="title">豪华大床房</title><desc id="desc">带落地窗的大床客房插画</desc>
+  <defs><linearGradient id="sunset" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efd9bd"/><stop offset="1" stop-color="#bd8f75"/></linearGradient></defs>
+  <rect width="800" height="460" fill="url(#sunset)"/><rect y="330" width="800" height="130" fill="#9c7663"/>
+  <rect x="500" y="32" width="238" height="250" rx="5" fill="#fdf5e8"/><rect x="520" y="52" width="198" height="210" fill="#b6d2d1"/><path d="M520 225l66-70 48 42 34-34 50 62z" fill="#6faaa6"/><path d="M620 52v210M520 157h198" stroke="#fdf5e8" stroke-width="8"/>
+  <rect x="112" y="165" width="390" height="165" rx="10" fill="#765a51"/><rect x="130" y="188" width="354" height="128" rx="5" fill="#f3e4cb"/><rect x="148" y="198" width="142" height="45" rx="9" fill="#fffaf2"/><rect x="306" y="198" width="160" height="45" rx="9" fill="#fffaf2"/>
+  <rect x="82" y="260" width="36" height="75" fill="#594741"/><path d="M83 260h34l-7-50H91z" fill="#e5c678"/><rect x="505" y="260" width="36" height="75" fill="#594741"/><path d="M506 260h34l-7-50h-19z" fill="#e5c678"/>
+</svg>

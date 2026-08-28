@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+  <title id="title">家庭房</title><desc id="desc">明亮的家庭客房插画</desc>
+  <defs><linearGradient id="morning" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dce9e6"/><stop offset="1" stop-color="#adc5d1"/></linearGradient></defs>
+  <rect width="800" height="460" fill="url(#morning)"/><rect y="322" width="800" height="138" fill="#c09a74"/>
+  <rect x="70" y="42" width="260" height="188" rx="5" fill="#f8f5e9"/><rect x="90" y="62" width="220" height="148" fill="#a7ccda"/><path d="M90 184l60-61 45 39 34-29 81 51z" fill="#74a7a7"/><circle cx="137" cy="104" r="18" fill="#f5dd8d"/>
+  <rect x="352" y="165" width="330" height="160" rx="10" fill="#71584e"/><rect x="370" y="186" width="294" height="128" rx="5" fill="#f0dfc5"/><rect x="388" y="198" width="124" height="43" rx="8" fill="#fffaf0"/><rect x="526" y="198" width="120" height="43" rx="8" fill="#fffaf0"/>
+  <rect x="105" y="230" width="220" height="92" rx="8" fill="#806357"/><rect x="121" y="246" width="188" height="67" rx="4" fill="#e6d7c3"/><rect x="132" y="254" width="75" height="30" rx="7" fill="#fffaf1"/><rect x="216" y="254" width="80" height="30" rx="7" fill="#fffaf1"/>
+  <rect x="42" y="277" width="42" height="60" fill="#594741"/><path d="M43 277h40l-8-45H51z" fill="#e5c678"/><rect x="694" y="277" width="42" height="60" fill="#594741"/><path d="M695 277h40l-8-45h-24z" fill="#e5c678"/>
+</svg>

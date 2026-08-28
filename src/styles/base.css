@@ -226,13 +226,13 @@ nav a:hover {
 }
 .room-cover {
   height: 116px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: #e8eeea;
-  color: #6f8b7d;
-  font-size: 21px;
-  letter-spacing: 0.16em;
+}
+.room-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .room-body {
   padding: 24px;
