@@ -47,7 +47,11 @@ http.interceptors.response.use(
     if (error.config && requestGenerations.get(error.config) !== generation)
       return Promise.reject(new ApiError("STALE_RESPONSE", "会话已变化"));
     const data = error.response?.data;
-    if (error.response?.status === 401 && error.config?.url !== "/auth/login")
+    if (
+      error.response?.status === 401 &&
+      error.config?.url !== "/auth/login" &&
+      error.config?.url !== "/auth/me"
+    )
       unauthorized?.();
     return Promise.reject(
       new ApiError(
